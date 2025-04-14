@@ -41,7 +41,8 @@ EOF
     Uninstall)
       sudo crontab -l 2>/dev/null | sed '/.ddns.sh/d' | sudo crontab -
       sudo service cron restart
-      sudo rm /root/.ddns.sh;;
+      sudo rm /root/.ddns.sh
+      break;;
     Quit)
       break;;
     *)
