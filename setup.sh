@@ -45,7 +45,7 @@ EOF
     Quit)
       break;;
     *)
-      echo "Incorect input."
+      echo; echo "Incorect input."
       echo;;
   esac
 done
