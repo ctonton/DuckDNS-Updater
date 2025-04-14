@@ -1,5 +1,6 @@
 #!/bin/bash
-clear; echo
+clear
+sudo echo
 PS3="Select option: "
 select mode in Install Update Uninstall Quit; do
   case $mode in
