@@ -1,7 +1,7 @@
 #!/bin/bash
 ###
-domain="Your_domain_here"
-token="Your_token_here"
+domain=your_domain_here
+token=your_token_here
 ###
 day0=
 old4=
