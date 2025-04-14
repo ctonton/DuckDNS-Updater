@@ -5,7 +5,7 @@ PS3="Select option: "
 select mode in Install Update Uninstall Quit; do
   case $mode in
     Install)
-      curl -V &>/dev/null && dig -v &>/dev/null || (sudo apt update; sudo apt install -y curl host)
+      crontab -h &>/dev/null && curl -V &>/dev/null && dig -v &>/dev/null || (sudo apt update; sudo apt install -y cron curl host)
       sudo tee /root/.ddns.sh >/dev/null <<'EOF'
 #!/bin/bash
 ###
