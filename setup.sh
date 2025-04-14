@@ -28,5 +28,6 @@ sudo chmod +x /root/.ddns.sh
 echo; echo "Add job to cron."
 sudo crontab -l 2>/dev/null | grep -q '.ddns.sh' || (sudo crontab -l 2>/dev/null; echo "*/15 * * * * /root/.ddns.sh &>/dev/null") | sudo crontab -
 sudo service cron restart
-echo; read -n 1 -s -r -p "DuckDNS updater script is installed. Press any key to exit."
-exit
+echo; read -n 1 -s -r -p "DuckDNS updater script is installed. Press any key to update IP addresses and exit."
+sudo bash /root/.ddns.sh
+exit 0
