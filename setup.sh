@@ -30,12 +30,14 @@ EOF
       sudo chmod +x /root/.ddns.sh
       sudo crontab -l 2>/dev/null | grep -q '.ddns.sh' || (sudo crontab -l 2>/dev/null; echo "*/15 * * * * /root/.ddns.sh &>/dev/null") | sudo crontab -
       sudo service cron restart
-      sudo bash /root/.ddns.sh;;
+      sudo bash /root/.ddns.sh
+      break;;
     Update)
       echo; read -p "Enter or paste your duckdns domain here: " duckd
       echo; read -p "Enter or paste your duckdns token here: " duckt
       sudo sed -i "s/^domain=.*/domain=$duckd/;s/^token=.*/token=$duckt/" /root/.ddns.sh
-      sudo bash /root/.ddns.sh;;
+      sudo bash /root/.ddns.sh
+      break;;
     Uninstall)
       sudo crontab -l 2>/dev/null | sed '/.ddns.sh/d' | sudo crontab -
       sudo service cron restart
@@ -43,7 +45,8 @@ EOF
     Quit)
       break;;
     *)
-      echo "Incorect input.";;
+      echo "Incorect input."
+      echo;;
   esac
 done
 exit 0
